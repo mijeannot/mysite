@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,14 +17,13 @@
 </head>
 
 <body>
+
   <header>
     <div>
-      <a href="{% url 'homepage' %}">Home</a> |
-      <a href="{% url 'aboutpage' %}">About</a> |
-      <a href="{% url 'contactpage' %}">Contact us</a>"
+      {% include 'personal/navbar.html' %}
     </div>
   </header>
-  <i class="fas fa-thumbs-up fa-1x" style="color: #339af0;"></i>
+  <!--<i class="fas fa-thumbs-up fa-1x" style="color: #339af0;"></i>-->
   <div>
     {% block content %} {% endblock content %}
   </div>
