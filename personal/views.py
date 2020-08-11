@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from personal.models import Question
 
 # Create your views here.
 def home(request):
-    # adict = {"homepage": "home page"}
-    # return render(request, "personal/home.html", adict)
-    return render(request, "personal/home.html", {"homepage": "home page"})
+    context = {}
+    context["questions"] = Question.objects.all()
+    return render(request, "personal/home.html", context)
 
 
 def about(request):
