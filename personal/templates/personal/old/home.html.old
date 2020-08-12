@@ -1,0 +1,17 @@
+{% extends 'personal/base.html' %}
+
+{% block title %} {{ homepage }} {% endblock title %}</title>
+
+  {% block content %}
+  
+  {% for question in questions %}
+    {% include 'personal/snippets/sample.html' with value=question %}
+  {% endfor %}
+    
+  {% include 'personal/snippets/sample.html' %}
+  <h2>home page content here</h2>
+  {% endblock content %}
+
+  {% block footer %}
+  <h4>footer here</h4>
+  {% endblock footer %}
